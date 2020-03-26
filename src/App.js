@@ -21,10 +21,10 @@ import "shards-ui/dist/css/shards.min.css";
 function App() {
   return (
     <div className="App">
-      <Card className="card-spacing">
-        <CardBody>
-          <Card className="card-spacing">
-            <CardBody>
+      <Card className="Card-spacing">
+        <CardBody className="Card-spacing">
+          <Card className="Card-spacing">
+            <CardBody className="Card-spacing">
               <h2>WhenIsBriefing.com ?</h2>
               <h3>
                 Current Time:{" "}
@@ -36,8 +36,8 @@ function App() {
               </h3>
             </CardBody>
           </Card>
-          <Card className="card-spacing">
-            <CardBody>
+          <Card className="Card-spacing">
+            <CardBody className="Card-spacing">
               <Form>
                 <FormGroup size="sm">
                   <InputGroup>
@@ -59,8 +59,8 @@ function App() {
               </Form>
             </CardBody>
           </Card>
-          <Card className="card-spacing">
-            <CardBody>
+          <Card className="Card-spacing">
+            <CardBody className="Card-spacing">
               <Form>
                 <FormGroup size="sm">
                   <InputGroup size="sm">
@@ -82,8 +82,8 @@ function App() {
               </Form>
             </CardBody>
           </Card>
-          <Card className="card-spacing">
-            <CardBody>
+          <Card className="Card-spacing">
+            <CardBody className="Card-spacing">
               <Form>
                 <InputGroup>
                   <InputGroupAddon type="prepend">
