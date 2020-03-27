@@ -1,12 +1,15 @@
 var createError = require('http-errors');
 var express = require('express');
+const bodyParser = require('body-parser')
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const db = require('./queries');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var testAPIRouter = require('./routes/testAPI');
+// var indexRouter = require('./routes/index');
+// var usersRouter = require('./routes/users');
+
+// var testAPIRouter = require('./routes/testAPI');
 var cors = require('cors');
 var app = express();
 
@@ -21,9 +24,18 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 
+var timeRouter = require('./routes/time');
+var indexRouter = require('./routes/index');
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/testAPI', testAPIRouter);
+app.use('/time', timeRouter);
+// app.use('/users', usersRouter);
+// app.use('/testAPI', testAPIRouter);
+
+app.get('/', function(req, rest) {
+  res.send('Hello World');
+});
+app.get('/time', db.getTime)
+app.get('/time/:id', db.getTimeById)
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
